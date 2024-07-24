@@ -1,0 +1,27 @@
+{
+  "name": "rod-catch-returns-performance-tests-js",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DEFRA/rod-catch-returns-performance-tests-js.git"
+  },
+  "keywords": [
+    "rod",
+    "catch",
+    "returns",
+    "api",
+    "performance",
+    "tests"
+  ],
+  "author": "DEFRA",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/DEFRA/rod-catch-returns-performance-tests-js/issues"
+  },
+  "homepage": "https://github.com/DEFRA/rod-catch-returns-performance-tests-js#readme"
+}
