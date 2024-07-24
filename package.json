@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "artillery run test.yml",
+    "report:json": "artillery run --output reports/report.json test.yml",
+    "report:html": "artillery report reports/report.json"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/DEFRA/rod-catch-returns-performance-tests-js/issues"
   },
-  "homepage": "https://github.com/DEFRA/rod-catch-returns-performance-tests-js#readme"
+  "homepage": "https://github.com/DEFRA/rod-catch-returns-performance-tests-js#readme",
+  "dependencies": {
+    "artillery": "^2.0.18"
+  }
 }
