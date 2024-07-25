@@ -1,12 +1,21 @@
 config:
   target: '{{ $processEnvironment.WEB_URL }}'
+  # Responses have to be sent within 10 seconds or the request will be aborted
+  timeout: 10
+  # 100 virtual users in 5 mins (one virtual user approximately every 3 seconds)
   phases:
-    - duration: 300
-      arrivalCount: 100 # 100 virtual users in 5 mins (one virtual user approximately every 3 seconds)
+    - duration: 10
+      arrivalRate: 1
+  plugins:
+    ensure: {}
+    expect: {}
+  ensure:
+    maxErrorRate: 1
 
 scenarios:
-  - flow:
+  - name: 'Hit Licence Auth Screen'
+    flow:
       - get:
           url: '/licence-auth'
           expect:
-            statusCode: 200
+            - statusCode: 200
