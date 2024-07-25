@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "artillery run test.yml",
-    "report:json": "artillery run --output reports/report.json test.yml",
+    "test": "artillery run test.yml --dotenv=.env",
+    "report:json": "npm run test -- --output reports/report.json",
     "report:html": "artillery report reports/report.json",
     "prettier": "prettier . --check",
     "prettier:fix": "npm run prettier -- --write",
