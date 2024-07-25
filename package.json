@@ -6,7 +6,13 @@
   "scripts": {
     "test": "artillery run test.yml",
     "report:json": "artillery run --output reports/report.json test.yml",
-    "report:html": "artillery report reports/report.json"
+    "report:html": "artillery report reports/report.json",
+    "lint": "eslint 'src/**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "format:check": "npm run prettier && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -28,5 +34,31 @@
   "homepage": "https://github.com/DEFRA/rod-catch-returns-performance-tests-js#readme",
   "dependencies": {
     "artillery": "^2.0.18"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "prettier": "^3.3.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "prettier"
+    ],
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
   }
 }

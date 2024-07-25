@@ -1,11 +1,11 @@
 config:
-  target: "http://asciiart.artillery.io:8080"
+  target: 'http://asciiart.artillery.io:8080'
   phases:
     - duration: 30
       arrivalRate: 5
 scenarios:
   - flow:
       - get:
-          url: "/dino"
+          url: '/dino'
           expect:
             statusCode: 200
