@@ -25,13 +25,6 @@ pipeline {
     post {
         success {
             archiveArtifacts 'reports/*'
-            publishHTML (target : [allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'reports',
-                reportFiles: 'report.json.html',
-                reportName: 'My Reports',
-                reportTitles: 'The Report'])
         }
         cleanup {
             cleanWs cleanWhenFailure: true
