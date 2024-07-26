@@ -8,7 +8,9 @@ config:
       arrivalCount: 1
   plugins:
     ensure: {}
-    expect: {}
+    expect:
+      reportFailuresAsErrors: true
+      outputFormat: prettyError
   ensure:
     maxErrorRate: 1
 
