@@ -22,4 +22,9 @@ pipeline {
             }
         }
     }
+    post {
+        cleanup {
+            cleanWs cleanWhenFailure: true
+        }
+    }
 }
