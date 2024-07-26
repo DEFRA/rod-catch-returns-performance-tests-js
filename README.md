@@ -30,7 +30,7 @@ npm i
 
 ## Running
 
-This will run the tests and output the results in the console.
+This will run the tests and output the results in the console. Make sure the environment is started!
 
 ```shell script
 npm test
