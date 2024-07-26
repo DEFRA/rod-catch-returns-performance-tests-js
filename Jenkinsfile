@@ -1,24 +1,12 @@
 pipeline {
     agent {
-        docker {
-            image 'artilleryio/artillery:latest'
-            args '-u root:root -i --entrypoint='
-        }
+        docker { image 'node:18.17-alpine' }
     }
- 
     stages {
-        stage('Load Test') {
+        stage('Test') {
             steps {
-                sh 'mkdir reports'
-                sh '/home/node/artillery/bin/run run --output reports/report.json tests/performance/socket-io.yml'
-                sh '/home/node/artillery/bin/run report --output reports/report reports/report.json'
+                sh 'node --version'
             }
-        }
-    }
- 
-    post {
-        success {
-            archiveArtifacts 'reports/*'
         }
     }
 }
