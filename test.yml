@@ -4,8 +4,8 @@ config:
   timeout: 10
   # 100 virtual users in 5 mins (one virtual user approximately every 3 seconds)
   phases:
-    - duration: 10
-      arrivalCount: 1
+    - duration: 300
+      arrivalCount: 100
   plugins:
     ensure: {}
     expect:

@@ -16,10 +16,16 @@ It is recommended to use [NVM](https://github.com/nvm-sh/nvm) to manage the node
 
 ## Installation
 
-Copy the example environment file and replace the relevant variables.
+You can either copy the example environment file and replace the relevant variables.
 
 ```shell script
 cp .env.example .env
+```
+
+Or export each environment variable in the console e.g.
+
+```shell script
+export WEB_URL=https://example.com
 ```
 
 Install the project.
@@ -35,6 +41,14 @@ This will run the tests and output the results in the console. Make sure the env
 ```shell script
 npm test
 ```
+
+If running with a .env file you have to run `-- --dotenv=.env` after each command e.g.
+
+```shell script
+npm test -- --dotenv=.env
+```
+
+This is because for some reason Artillery doesn't automatically recognise it. If you exported the variables in the command line instead, you don't have to run this command.
 
 ## Reporting
 
