@@ -23,6 +23,9 @@ pipeline {
         }
     }
     post {
+        success {
+            archiveArtifacts 'reports/*'
+        }
         cleanup {
             cleanWs cleanWhenFailure: true
         }
