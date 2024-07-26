@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker { 
-          image 'node:18.17-alpine'
+          image 'node:18.20-alpine'
           args '-u root:root -i --entrypoint='
         }
     }
@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm report:json'
+                sh 'npm run report:json'
             }
         }
         stage('HTML report') {
             steps {
-                sh 'npm report:html'
+                sh 'npm run report:html'
             }
         }
     }
