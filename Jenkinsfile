@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'node:18.17-alpine' }
+        docker { 
+          image 'node:18.17-alpine'
+          args '-u root:root -i --entrypoint='
+        }
     }
     stages {
         stage('Install') {
