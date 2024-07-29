@@ -16,10 +16,16 @@ It is recommended to use [NVM](https://github.com/nvm-sh/nvm) to manage the node
 
 ## Installation
 
-Copy the example environment file and replace the relevant variables.
+You can either copy the example environment file and replace the relevant variables.
 
 ```shell script
 cp .env.example .env
+```
+
+Or export each environment variable in the console e.g.
+
+```shell script
+export WEB_URL=https://example.com
 ```
 
 Install the project.
@@ -36,18 +42,32 @@ This will run the tests and output the results in the console. Make sure the env
 npm test
 ```
 
+If running with a .env file you have to add `:with-local-env`:
+
+```shell script
+npm test:with-local-env
+```
+
+The command adds `--dotenv=.env` to the test command. This is because for some reason Artillery doesn't automatically recognise a .env file. If you exported the variables in the command line instead, you don't have to add this.
+
 ## Reporting
 
 To create a report, you first have to run the tests using the command below. This will output a report in JSON format in the reports folder.
 
 ```shell script
-npm run report:json
+npm run report-json
 ```
 
-You then take that JSON report and convert it to a HTML report by running the command.
+If running with a .env file use
 
 ```shell script
-npm run report:html
+npm run report-json:with-local-env
+```
+
+You then take that JSON report and convert it to a HTML report by running the command (no need to add `:with-local-env` if using a .env file).
+
+```shell script
+npm run report-html
 ```
 
 ## Contributing to this project

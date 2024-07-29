@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "artillery run test.yml --dotenv=.env",
-    "report:json": "npm run test -- --output reports/report.json",
-    "report:html": "artillery report reports/report.json",
+    "test": "artillery run test.yml",
+    "report-json": "npm test -- --output reports/report.json",
+    "report-html": "artillery report reports/report.json",
+    "test:with-local-env": "npm test -- --dotenv=.env",
+    "report-json:with-local-env": "npm test -- --dotenv=.env --output reports/report.json",
     "prettier": "prettier . --check",
     "prettier:fix": "npm run prettier -- --write",
     "prepare": "husky"
