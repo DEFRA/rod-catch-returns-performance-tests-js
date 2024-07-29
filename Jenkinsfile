@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm run report:json'
+                sh 'npm run report-json'
             }
         }
         stage('HTML report') {
             steps {
-                sh 'npm run report:html'
+                sh 'npm run report-html'
             }
         }
     }

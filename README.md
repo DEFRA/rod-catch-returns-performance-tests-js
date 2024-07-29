@@ -42,26 +42,32 @@ This will run the tests and output the results in the console. Make sure the env
 npm test
 ```
 
-If running with a .env file you have to run `-- --dotenv=.env` after each command e.g.
+If running with a .env file you have to add `:with-local-env`:
 
 ```shell script
-npm test -- --dotenv=.env
+npm test:with-local-env
 ```
 
-This is because for some reason Artillery doesn't automatically recognise it. If you exported the variables in the command line instead, you don't have to run this command.
+The command adds `--dotenv=.env` to the test command. This is because for some reason Artillery doesn't automatically recognise a .env file. If you exported the variables in the command line instead, you don't have to add this.
 
 ## Reporting
 
 To create a report, you first have to run the tests using the command below. This will output a report in JSON format in the reports folder.
 
 ```shell script
-npm run report:json
+npm run report-json
 ```
 
-You then take that JSON report and convert it to a HTML report by running the command.
+If running with a .env file use
 
 ```shell script
-npm run report:html
+npm run report-json:with-local-env
+```
+
+You then take that JSON report and convert it to a HTML report by running the command (no need to add `:with-local-env` if using a .env file).
+
+```shell script
+npm run report-html
 ```
 
 ## Contributing to this project
